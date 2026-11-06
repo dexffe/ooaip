@@ -6,7 +6,6 @@ namespace SpaceBattle.ConsoleApp;
 
 public static partial class MatchRunner
 {
-    /// <summary>Композиционный корень: единственное место регистрации зависимостей матча.</summary>
     private static void RegisterDependencies(Queue<Lib.ICommand> queue, Action<string> log)
     {
         var codeStringMap = new Dictionary<KeyValuePair<Type, Type>, string>();
@@ -36,7 +35,6 @@ public static partial class MatchRunner
         IoC.Resolve<Hwdtech.ICommand>("IoC.Register", key, dependency).Execute();
     }
 
-    /// <summary>Шаблон адаптера не содержит namespace и using: добавляем их перед компиляцией.</summary>
     private static string WrapAdapterCode(string code) =>
         "using Hwdtech;" + Environment.NewLine +
         "namespace SpaceBattle.Lib" + Environment.NewLine +

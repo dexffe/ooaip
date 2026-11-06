@@ -5,7 +5,6 @@ namespace SpaceBattle.ConsoleApp;
 
 public static partial class MatchRunner
 {
-    /// <summary>Ход игры: все действия выполняются командами из очереди и только через адаптер IMovable.</summary>
     private sealed class GameSession
     {
         private readonly ConsoleShip _ship;
@@ -51,7 +50,6 @@ public static partial class MatchRunner
             var movable = Movable;
             _log($"Ход {_turnNumber} начат. Текущая позиция: {movable.Position}.");
 
-            // Hwdtech-команда попадает в игровую очередь через адаптер Hwdtech.ICommand -> ICommand.
             _queue.Enqueue(new HwdtechCommandAdapter(new LogStepCommand(_log, $"Команды хода {_turnNumber} выполнены.")));
 
             IoC.Resolve<Lib.ICommand>("ReturnCommandTimeStrategy", _queue).Execute();

@@ -4,10 +4,6 @@ using SpaceBattle.Lib;
 
 namespace SpaceBattle.ConsoleApp;
 
-/// <summary>
-/// Запуск матча. Весь матч идёт в дочернем IoC-скоупе корневого скоупа,
-/// а все действия над кораблём выполняются командами через адаптер IMovable.
-/// </summary>
 public static partial class MatchRunner
 {
     /// <summary>Интерактивный режим: параметры корабля читаются из потока ввода.</summary>
@@ -32,7 +28,6 @@ public static partial class MatchRunner
         });
     }
 
-    /// <summary>Режим сценария: команды берутся из разобранного файла правил (.txt).</summary>
     public static void RunRules(IReadOnlyList<RuleEntry> entries, TextWriter output, string logPath)
     {
         ArgumentNullException.ThrowIfNull(entries);
