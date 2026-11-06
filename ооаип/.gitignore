@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Logs, test results and coverage
+*.log
+TestResults/
+coverage/
+
+# Local helper files (not part of the project)
+_*.ps1
+_*.txt
+_*.done
+dump.txt
