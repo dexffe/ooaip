@@ -6,8 +6,6 @@ public class CreateadapterStrategy : IStrategy
     {
         var obj = (IUObject)args[0];
         var type2 = (Type)args[1];
-        // Адаптер оборачивает любой IUObject, поэтому исходным типом для генерации служит IUObject,
-        // а ключ кэша строится по реальному типу объекта.
         var str = IoC.Resolve<string>("CodeStringGenerateStrategy", typeof(IUObject), type2);
         var dic = IoC.Resolve<IDictionary<KeyValuePair<Type, Type>, string>>("CodeStringmap");
         var key = new KeyValuePair<Type, Type>(obj.GetType(), type2);
