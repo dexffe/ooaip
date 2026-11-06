@@ -31,7 +31,7 @@ public class IMovableAdapter : IMovable
         MetadataReference[] references = new MetadataReference[]
          {
             MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
-            MetadataReference.CreateFromFile("../../../../SpaceBattle.Lib/bin/Debug/net6.0/SpaceBattle.Lib.dll")
+            MetadataReference.CreateFromFile("../../../../SpaceBattle.Lib/bin/Debug/net10.0/SpaceBattle.Lib.dll")
          };
         var dict = new Dictionary<KeyValuePair<Type, Type>, string>();
         var dict2 = new Dictionary<string, MemoryStream>();
